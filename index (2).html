@@ -1,0 +1,415 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DM with Ritik_ & cutiee_ 💖</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: #fcd5e4; 
+            background-image: radial-gradient(#ffffff 15%, transparent 16%), radial-gradient(#ffffff 15%, transparent 16%);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Floating Sparkles */
+        .floating-heart {
+            position: absolute;
+            color: #ff99c2;
+            font-size: 20px;
+            opacity: 0;
+            z-index: 0;
+            animation: floatUp 6s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+            20% { opacity: 0.6; }
+            80% { opacity: 0.6; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+        }
+
+        /* Phone UI Frame */
+        .chat-container {
+            width: 100%;
+            max-width: 410px;
+            height: 720px;
+            background: #fff;
+            border: 8px solid #000; 
+            border-radius: 40px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(220, 39, 67, 0.2);
+            z-index: 1;
+            position: relative;
+        }
+
+        /* Header Layout */
+        .chat-header {
+            padding: 20px 15px 15px 15px;
+            border-bottom: 1px solid #f2e1e8;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #fff;
+        }
+
+        .back-arrow {
+            font-size: 20px;
+            color: #000;
+            margin-right: 5px;
+        }
+
+        .user-info h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        /* Chat Content Area */
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            background: #fff0f5; 
+        }
+
+        /* Chat Message Bubbles */
+        .message {
+            max-width: 80%;
+            padding: 14px 18px;
+            border-radius: 24px;
+            font-size: 15px;
+            line-height: 1.4;
+            word-wrap: break-word;
+            animation: popIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.15) forwards;
+        }
+
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .ritik {
+            background-color: #ffb6c1; 
+            color: #000;
+            align-self: flex-start;
+            border-bottom-left-radius: 6px;
+        }
+
+        .suzuu {
+            background: #000;
+            color: #fff;
+            align-self: flex-end;
+            border-bottom-right-radius: 6px;
+        }
+
+        /* Glowing Response Box for Suzuu */
+        .typing-dots {
+            background: #cc0066;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            align-self: flex-end;
+            font-weight: bold;
+            letter-spacing: 2px;
+            box-shadow: 0 0 12px #ff007f;
+            display: inline-block;
+        }
+
+        .question-prompt {
+            background: #fff;
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 14px;
+            color: #cc0066;
+            border: 1px dashed #ffb6c1;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin: 5px 0;
+        }
+
+        /* Options */
+        .options-container {
+            padding: 15px 15px;
+            border-top: 1px solid #f2e1e8;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option-btn {
+            background: #cc0066;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(204, 0, 102, 0.3);
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .option-btn:hover {
+            background: #e60073;
+            transform: translateY(-1px);
+        }
+
+        .chat-footer-bar {
+            padding: 10px 20px 20px 20px;
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f2e1e8;
+            color: #999;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <span class="back-arrow">‹</span>
+            <div class="user-info">
+                <h4>DM with Ritik_ & cutiee_ 💖</h4>
+            </div>
+        </div>
+
+        <div class="chat-messages" id="chat-box">
+            <div class="message ritik">
+                <strong>ritik_ (Ritik)</strong><br><br>
+                Hey gorgeous! ❤️<br>
+                I was just thinking about you and wanted to play a little game... Are you ready to confess a few things? 🤭
+            </div>
+        </div>
+
+        <div id="interactive-space">
+            <div class="options-container">
+                <button class="option-btn" onclick="nextStep('ready', 'Ooh, a game? I am so ready! 🥰')">[ Ooh, a game? I am so ready! 🥰 ]</button>
+                <button class="option-btn" onclick="nextStep('ready', 'Depends... what do I get if I win? 👀')">[ Depends... what do I get if I win? 👀 ]</button>
+            </div>
+        </div>
+
+        <div class="chat-footer-bar">
+            <span>📷 Message...</span>
+            <span>🎙️ 🖼️</span>
+        </div>
+    </div>
+
+    <script>
+        function spawnHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '✨';
+            heart.classList.add('floating-heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 2 + 4) + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 6000);
+        }
+        setInterval(spawnHeart, 600);
+
+        const chatBox = document.getElementById('chat-box');
+        const interactiveSpace = document.getElementById('interactive-space');
+
+        function scrollToBottom() {
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function showDotsAndReply(cutieeText, callback) {
+            interactiveSpace.innerHTML = '';
+            
+            const nameLbl = document.createElement('div');
+            nameLbl.style.alignSelf = 'flex-end';
+            nameLbl.style.fontSize = '12px';
+            nameLbl.style.fontWeight = '600';
+            nameLbl.style.color = '#555';
+            nameLbl.innerText = 'cutiee_ (cutiee)';
+            chatBox.appendChild(nameLbl);
+
+            const dots = document.createElement('div');
+            dots.classList.add('typing-dots');
+            dots.innerText = '● ● ●';
+            chatBox.appendChild(dots);
+            scrollToBottom();
+
+            setTimeout(() => {
+                dots.remove();
+                const msgDiv = document.createElement('div');
+                msgDiv.classList.add('message', 'suzuu');
+                msgDiv.innerText = cutieeText;
+                chatBox.appendChild(msgDiv);
+                scrollToBottom();
+                
+                setTimeout(callback, 1000);
+            }, 1000);
+        }
+
+        function nextStep(currentStage, selectedText) {
+            showDotsAndReply(selectedText, () => {
+                
+                if (currentStage === 'ready') {
+                    // QUESTION 1
+                    const prompt = document.createElement('div');
+                    prompt.classList.add('question-prompt');
+                    prompt.innerText = "Question 1: When did you realize you had a massive crush on me?";
+                    chatBox.appendChild(prompt);
+
+                    interactiveSpace.innerHTML = `
+                        <div class="options-container">
+                            <button class="option-btn" onclick="nextStep('q1', 'The very first moment our eyes met... 👀✨')">[ The very first moment our eyes met... 👀✨ ]</button>
+                            <button class="option-btn" onclick="nextStep('q1', 'When you made me laugh so hard my stomach hurt! 😂💖')">[ When you made me laugh so hard my stomach hurt! 😂💖 ]</button>
+                        </div>
+                    `;
+                    scrollToBottom();
+
+                } else if (currentStage === 'q1') {
+                    // RITIK RESPONDS TO Q1 & ASKS QUESTION 2
+                    const ritikMsg = document.createElement('div');
+                    ritikMsg.classList.add('message', 'ritik');
+                    ritikMsg.innerHTML = `<strong>ritik_ (Ritik)</strong><br><br>Honestly, you had me hooked from day one too. My heart still skips a beat every single time you look at me. 😏❤️`;
+                    chatBox.appendChild(ritikMsg);
+                    
+                    setTimeout(() => {
+                        const prompt = document.createElement('div');
+                        prompt.classList.add('question-prompt');
+                        prompt.innerText = "Question 2: If we were together right now, what are we doing first?";
+                        chatBox.appendChild(prompt);
+
+                        interactiveSpace.innerHTML = `
+                            <div class="options-container">
+                                <button class="option-btn" onclick="nextStep('q2', 'Stealing a tight, warm hug and never letting go. 🫂')">[ Stealing a tight, warm hug and never letting go. 🫂 ]</button>
+                                <button class="option-btn" onclick="nextStep('q2', 'Going straight for a sweet, breathless kiss. 💋🙈')">[ Going straight for a sweet, breathless kiss. 💋🙈 ]</button>
+                            </div>
+                        `;
+                        scrollToBottom();
+                    }, 1000);
+
+                } else if (currentStage === 'q2') {
+                    // RITIK RESPONDS TO Q2 & ASKS QUESTION 3
+                    const ritikMsg = document.createElement('div');
+                    ritikMsg.classList.add('message', 'ritik');
+                    ritikMsg.innerHTML = `<strong>ritik_ (Ritik)</strong><br><br>Why choose? I'm doing both, and I am definitely not letting you escape. You're too cute to resist. 🥵🔥`;
+                    chatBox.appendChild(ritikMsg);
+
+                    setTimeout(() => {
+                        const prompt = document.createElement('div');
+                        prompt.classList.add('question-prompt');
+                        prompt.innerText = "Question 3: What is your absolute favorite thing about me?";
+                        chatBox.appendChild(prompt);
+
+                        interactiveSpace.innerHTML = `
+                            <div class="options-container">
+                                <button class="option-btn" onclick="nextStep('q3', 'The way you protect me and make me feel so safe. 🛡️❤️')">[ The way you protect me and make me feel so safe. 🛡️❤️ ]</button>
+                                <button class="option-btn" onclick="nextStep('q3', 'Your beautiful smile that completely ruins my focus. 🫠')">[ Your beautiful smile that completely ruins my focus. 🫠 ]</button>
+                            </div>
+                        `;
+                        scrollToBottom();
+                    }, 1000);
+
+                } else if (currentStage === 'q3') {
+                    // RITIK RESPONDS TO Q3 & ASKS QUESTION 4
+                    const ritikMsg = document.createElement('div');
+                    ritikMsg.classList.add('message', 'ritik');
+                    
+                    if(selectedText.includes('safe')) {
+                        ritikMsg.innerHTML = `<strong>ritik_ (Ritik)</strong><br><br>I will always protect you, Suzuu. You're my priority, always and forever. 🔐❤️`;
+                    } else {
+                        ritikMsg.innerHTML = `<strong>ritik_ (Ritik)</strong><br><br>Stop it, you're making me blush over here! But I guess my smile works exactly how I planned... 😉✨`;
+                    }
+                    chatBox.appendChild(ritikMsg);
+
+                    setTimeout(() => {
+                        const prompt = document.createElement('div');
+                        prompt.classList.add('question-prompt');
+                        prompt.innerText = "Question 4: Where is our perfect dreamy date night happening?";
+                        chatBox.appendChild(prompt);
+
+                        interactiveSpace.innerHTML = `
+                            <div class="options-container">
+                                <button class="option-btn" onclick="nextStep('q4', 'A cozy blanket fort movie night with lots of cuddles. 🍿🎬')">[ A cozy blanket fort movie night with lots of cuddles. 🍿🎬 ]</button>
+                                <button class="option-btn" onclick="nextStep('q4', 'A candlelit rooftop dinner under the stars. 🌌🥂')">[ A candlelit rooftop dinner under the stars. 🌌🥂 ]</button>
+                            </div>
+                        `;
+                        scrollToBottom();
+                    }, 1000);
+
+                } else if (currentStage === 'q4') {
+                    // RITIK RESPONDS TO Q4 & ASKS QUESTION 5
+                    const ritikMsg = document.createElement('div');
+                    ritikMsg.classList.add('message', 'ritik');
+                    
+                    if(selectedText.includes('fort')) {
+                        ritikMsg.innerHTML = `<strong>ritik_ (Ritik)</strong><br><br>Ugh, yes! Cozy vibes, snacks, and you wrapped up in my arms. That sounds absolutely perfect. 🧸💞`;
+                    } else {
+                        ritikMsg.innerHTML = `<strong>ritik_ (Ritik)</strong><br><br>Fancy! You deserve to be treated like a queen, and I get to admire you under the moonlight. Perfect deal. 👑✨`;
+                    }
+                    chatBox.appendChild(ritikMsg);
+
+                    setTimeout(() => {
+                        const prompt = document.createElement('div');
+                        prompt.classList.add('question-prompt');
+                        prompt.innerText = "Question 5: Last one... promise you will let me spoil you forever?";
+                        chatBox.appendChild(prompt);
+
+                        interactiveSpace.innerHTML = `
+                            <div class="options-container">
+                                <button class="option-btn" onclick="nextStep('q5', 'Only if you promise to never stop loving me. 🥺💖')">[ Only if you promise to never stop loving me. 🥺💖 ]</button>
+                                <button class="option-btn" onclick="nextStep('q5', 'Hmm, alright, you have a lifetime deal! 🤝💋')">[ Hmm, alright, you have a lifetime deal! 🤝💋 ]</button>
+                            </div>
+                        `;
+                        scrollToBottom();
+                    }, 1000);
+
+                } else if (currentStage === 'q5') {
+                    // FINAL CELEBRATION
+                    const finalRitik = document.createElement('div');
+                    finalRitik.classList.add('message', 'ritik');
+                    
+                    let suzuuWishResponse = "";
+                    if(selectedText.includes('loving')) {
+                        cutieeWishResponse = "That is the easiest promise I will ever make. Loving you is completely effortless. ";
+                    } else {
+                        suzuuWishResponse = "Best deal of my life! You are stuck with me forever now, no refunds! ";
+                    }
+
+                    finalRitik.innerHTML = `<strong>ritik_ (Ritik)</strong><br><br>${suzuuWishResponse}Thank you for playing along, beautiful. You brighten up my whole world just by being in it. I am so lucky to have you. I love you! 💖✨🎉`;
+                    chatBox.appendChild(finalRitik);
+
+                    interactiveSpace.innerHTML = `
+                        <div style="padding: 20px; text-align: center; color: #cc0066; font-weight: bold; font-size: 14px;">
+                            [ Ritik is totally crazy about you! 💖 ]
+                        </div>
+                    `;
+                    scrollToBottom();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
+```
